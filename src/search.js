@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './search.less';
 
 class Search extends React.Component {
     render () {
         return (
-            <div>hello react! </div>
+            <div className="search-text" >
+                <span className="text">hello react!</span> 
+            </div>
         )
     }
 }
