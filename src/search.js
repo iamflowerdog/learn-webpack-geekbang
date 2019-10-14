@@ -7,7 +7,7 @@ class Search extends React.Component {
     render () {
         return (
             <div className="search-text" >
-                <span className="text">中国汉字牛逼</span> 
+                <span className="text">中国汉字牛逼666</span> 
                 <img src={ logo } />
             </div>
         )
