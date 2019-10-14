@@ -34,4 +34,19 @@
             }
         };
     ```
-* webpack-dev-server WDS 没有磁盘的IO，在内存里面
+* webpack-dev-server 
+    - WDS 没有磁盘的IO，在内存里面
+    - WDS 不刷新浏览器
+    - 使用HMR插件
+
+####  webpack热更新原理
+
+1. Webpack Compile: 将JS编译成Bundle
+2. HMR Server: 将热更新的文件输出给HMR Runtime
+3. Bundle server: 提供文件在浏览器的访问
+4. HMR Runtime: 会被注入到浏览器，更新文件的变化
+5. bundle.js: 构建输出文件
+
+#### 文件指纹如何生成
+
+* hash ---> complie: {complier: xxx}
