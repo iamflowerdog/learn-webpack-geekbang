@@ -50,3 +50,8 @@
 #### 文件指纹如何生成
 
 * hash ---> complie: {complier: xxx}
+
+#### PostCSS 的 autoprefixer 插件
+
+* parse CSS
+* add vendor prefixer to CSS using value from Can I Use.
