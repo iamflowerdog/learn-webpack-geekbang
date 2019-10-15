@@ -55,3 +55,12 @@
 
 * parse CSS
 * add vendor prefixer to CSS using value from Can I Use.
+
+#### px2rem-loader flexible 
+
+* html 根结点的大小计算，可以使用html: {font-size: calc(100vw/固定分辨率)}
+* 手淘这个库可以比较方便的解决手机端1px问题
+* px2rem-loader 可以设置 exclude ，把不需要转换的比如 node_modules 里面的模块去掉
+如果不设置exclude 也可以使用 /*no*/的语法设置某一行不进行px2rem的转换操作
+* flexible 一定要内敛进html文件里面，页面打开的时候就需要马上计算根结点的font-size值，如果不内敛可能存在闪动的情况
+
