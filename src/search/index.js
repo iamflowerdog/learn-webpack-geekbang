@@ -5,6 +5,7 @@ import logo from './image/logo.png';
 
 class Search extends React.Component {
     render () {
+        a = 1;
         return (
             <div className="search-text" >
                 <span className="text">中国汉字牛逼666</span> 
