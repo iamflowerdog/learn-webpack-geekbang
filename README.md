@@ -64,3 +64,9 @@
 如果不设置exclude 也可以使用 /*no*/的语法设置某一行不进行px2rem的转换操作
 * flexible 一定要内敛进html文件里面，页面打开的时候就需要马上计算根结点的font-size值，如果不内敛可能存在闪动的情况
 
+#### Mulity Page Application basic reslove solution
+
+* 每个页面对应一个Entry，一个 html-webpack-plugin (每次新增或者删除页面需要改webpack的配置)；
+* 利用 glob.sync 动态获取入口js文件 然后动态设置entry和html-webpack-plugin 
+* `entry:glob.sync(path.join(__dirname, './src/*/index.js'))`
+
