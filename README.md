@@ -72,8 +72,21 @@
 
 #### source-map
 
+> devtool的几种方法
 * eval: 使用eval包裹模块代码
 * source-map: 产生.map文件和.js文件是分离的
 * cheap: 不包含列的错误信息
 * inline: 将.map作为DataURI嵌入，不单独生成.map文件
 * module: 包含loader的sourecmap
+
+> source-map文件 整个文件就是js对象
+```
+{
+　　version : 3, // Source map的版本，目前为3。
+　　file: "out.js", // 转换后的js文件名
+　　sourceRoot : "", // 转换后js文件所在的目录。如果和map文件在同一层，则为空
+　　sources: ["foo.js", "bar.js"], // 转换前的js文件，数组类型，可能是多个js文件
+　　names: ["src", "maps", "are", "fun"], // 转换前所有变量名和属性名
+　　mappings: "AAgBC,SAAQ,CAAEA" // 记录位置信息的字符串
+}
+```

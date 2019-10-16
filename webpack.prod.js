@@ -124,5 +124,6 @@ module.exports = {
             cssProcessor: require('cssnano')
         }),
         new CleanWebpackPlugin()
-    ].concat(htmlWebpackPlugins)
+    ].concat(htmlWebpackPlugins),
+    devtool: 'source-map'
 };
