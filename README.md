@@ -100,4 +100,10 @@
 
 * use `SplitChunksPlugin`
 
+#### webpack.optimize.ModuleConcatenationPlugin 优化通过es6 import 的js文件
+* 大量作用域包裹代码，导致体积增大
+* 运行代码时创建的函数作用域变多，内存开销变大
+
+#### tree-shaking 优化 es6 import的没用的变量 擦除在uglify阶段
+
 
