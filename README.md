@@ -96,4 +96,4 @@
 #### split base library
 
 * use `html-wabpck-externals-plugin` 
-    [api]](https://www.npmjs.com/package/html-webpack-externals-plugin)
+    [api](https://www.npmjs.com/package/html-webpack-externals-plugin)
