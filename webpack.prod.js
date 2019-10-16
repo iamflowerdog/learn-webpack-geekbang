@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 
 const setMPA = () => {
     const entry = {};
@@ -123,7 +124,21 @@ module.exports = {
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano')
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new HtmlWebpackExternalsPlugin({
+            externals: [
+                {
+                    module: 'react',
+                    entry: 'umd/react.production.min.js',
+                    global: 'React',
+                },
+                {
+                    module: 'react-dom',
+                    entry: 'umd/react-dom.production.min.js',
+                    global: 'ReactDOM',
+                },
+            ]
+        })
     ].concat(htmlWebpackPlugins),
-    devtool: 'source-map'
+    devtool: ''
 };
