@@ -73,11 +73,11 @@
 #### source-map
 
 * devtool的几种方法
-    1 eval: 使用eval包裹模块代码
-    2 source-map: 产生.map文件和.js文件是分离的
-    3 cheap: 不包含列的错误信息
-    4 inline: 将.map作为DataURI嵌入，不单独生成.map文件
-    5 module: 包含loader的sourecmap
+    1. eval: 使用eval包裹模块代码
+    2. source-map: 产生.map文件和.js文件是分离的
+    3. cheap: 不包含列的错误信息
+    4. inline: 将.map作为DataURI嵌入，不单独生成.map文件
+    5. module: 包含loader的sourecmap
 
 * source-map文件 整个文件就是js对象
 ```
@@ -92,3 +92,8 @@
 ```
 * 生产环境不建议直接使用 source-map 但是这种情况下，线上报错我们该如何调试
     利用公司的前端监控系统，一旦报错，可以把 sourcemap 上传到这个监控系统里面，但是不要把sourcemap文件和静态资源文件的 cdn 一起发布到线上就好了
+
+#### split base library
+
+* use `html-wabpck-externals-plugin` 
+    [api]](https://www.npmjs.com/package/html-webpack-externals-plugin)
