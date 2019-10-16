@@ -124,21 +124,20 @@ module.exports = {
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano')
         }),
-        new CleanWebpackPlugin(),
-        new HtmlWebpackExternalsPlugin({
-            externals: [
-                {
-                    module: 'react',
-                    entry: 'umd/react.production.min.js',
-                    global: 'React',
-                },
-                {
-                    module: 'react-dom',
-                    entry: 'umd/react-dom.production.min.js',
-                    global: 'ReactDOM',
-                },
-            ]
-        })
+        new CleanWebpackPlugin()
+    
     ].concat(htmlWebpackPlugins),
-    devtool: ''
+    devtool: '',
+    optimization: {
+        splitChunks: {
+            minSize: 0,
+            cacheGroups: {
+              commons: {
+                  name: 'commons',
+                  chunks: 'all',
+                  minChunks: 2
+              }
+            }
+          }
+    }
 };

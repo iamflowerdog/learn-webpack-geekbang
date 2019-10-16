@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../../common/common';
 import './search.less';
 import logo from './image/logo.png';
 
