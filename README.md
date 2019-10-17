@@ -108,4 +108,11 @@
 
 #### tree-shaking 优化 es6 import的没用的变量 擦除在uglify阶段
 
+#### 懒加载JS脚本的方式
+
+1. CommonJS: require.ensure
+2. ES6: 动态import(目前还没有原生支持，需要babel转换)
+    * use: @babel/plugin-syntax-dynamic-import
+    * 内部通过webpackJsonp方式创建一个script标签
+
 
