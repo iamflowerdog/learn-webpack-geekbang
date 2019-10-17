@@ -103,6 +103,8 @@
 #### webpack.optimize.ModuleConcatenationPlugin 优化通过es6 import 的js文件
 * 大量作用域包裹代码，导致体积增大
 * 运行代码时创建的函数作用域变多，内存开销变大
+* DCE dead code elimination
+* Scope Hoisting 多个作用域用一个作用域替代，但是又一个前提，模块引用大于1次时候，这个效果无效，引用多次的模块在被webpack处理时，会被独立包裹函数所包裹
 
 #### tree-shaking 优化 es6 import的没用的变量 擦除在uglify阶段
 
