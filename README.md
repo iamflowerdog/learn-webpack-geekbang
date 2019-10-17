@@ -115,4 +115,14 @@
     * use: @babel/plugin-syntax-dynamic-import
     * 内部通过webpackJsonp方式创建一个script标签
 
+#### 引用 eslint-config-airbnb
 
+* Specifying Environments 
+```
+{
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}
+```
