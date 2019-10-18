@@ -126,3 +126,21 @@
     }
 }
 ```
+#### 服务端渲染（SSR）
+
+* server side rendering 
+* HTML + CSS + JS + Data -> 渲染后的HTML
+* 所有模板等资源都存储在服务端 内网机器拉取数据更快 一个HTML返回所有数据
+* 服务端渲染的核心是减少请求，减少白屏时间 对于SEO更加友好
+* 服务端部署流程 （并行）
+    1. 创建一个单独的 `webpack.ssr.js` , 业务代码里面创建单独的 `index-server.js`, 相应匹配规则改变
+    2. `index-server.js` 里面的 import/export  引入/导出规则 修改为cjs规则
+    3. 通过 `express` 创建一个node服务器 ，通过react创建的组件需要用到 window 没有window对象会报错，需要通过hack global.window 
+    4. react-dom/server 引入 renderToString 方法，将组件转换成html字符串
+    5. 不依赖客户端的网络，服务器网络
+
+* 普通的客户端渲染流程 （串行）
+    -  用户点击一个按钮，加载一个新的webview，（中间有个白屏）请求html，然后加载script解析，加载css， 加载数据， 渲染成功开始加载图片资源 然后页面可以交互 
+
+* 浏览器和服务器交互流程
+    - 请求开始 - 服务器 - html模版和data - server render - 浏览器解析并渲染 - 多屏加载并执行其他资源- 页面可交互
