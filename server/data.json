@@ -1,0 +1,145 @@
+{
+    "error": [],
+    "extra": [],
+    "data": [
+        {
+            "list": [
+                {
+                    "title": "重学前端",
+                    "cover": "https://static001.geekbang.org/resource/image/80/e2/80293b21a2cc9c02ccde5cec6838efe2.jpg",
+                    "score": 1550714057000,
+                    "extra": {
+                        "view_article_count": 49,
+                        "author_name": "程劭非（winter）",
+                        "column_title": "重学前端",
+                        "last_aid": 90148,
+                        "column_cover": "https://static001.geekbang.org/resource/image/80/e2/80293b21a2cc9c02ccde5cec6838efe2.jpg",
+                        "sub_time": 1550714057,
+                        "had_sub": true,
+                        "column_id": 154,
+                        "column_subtitle": "每天10分钟，重构你的前端知识体系",
+                        "update_frequency": "全集",
+                        "column_sku": 100023201,
+                        "column_type": 1,
+                        "is_include_audio": true,
+                        "article_count": 58,
+                        "score": 1550714057000,
+                        "author_intro": "前手机淘宝前端负责人",
+                        "author_header": "https://static001.geekbang.org/resource/image/80/e2/80293b21a2cc9c02ccde5cec6838efe2.jpg"
+                    },
+                    "type": "c1"
+                }
+            ],
+            "title": "专栏",
+            "page": {
+                "count": 1,
+                "more": false
+            },
+            "id": 1
+        },
+        {
+            "list": [
+                {
+                    "title": "React实战进阶45讲",
+                    "cover": "https://static001.geekbang.org/resource/image/33/2e/33f57c04bdc46e887d1ef5ca8ec7b42e.jpg",
+                    "score": 1571532763000,
+                    "extra": {
+                        "view_article_count": 6,
+                        "author_name": "王沛",
+                        "column_title": "React实战进阶45讲",
+                        "last_aid": 11272,
+                        "column_cover": "https://static001.geekbang.org/resource/image/33/2e/33f57c04bdc46e887d1ef5ca8ec7b42e.jpg",
+                        "sub_time": 1571532763,
+                        "had_sub": true,
+                        "column_id": 100,
+                        "column_subtitle": "掌握当下热门的前端利器",
+                        "update_frequency": "45课时·约560分钟",
+                        "column_sku": 100009301,
+                        "column_type": 3,
+                        "is_include_audio": false,
+                        "article_count": 46,
+                        "score": 1571532763000,
+                        "author_intro": "eBay中国研发中心资深技术专家",
+                        "author_header": "https://static001.geekbang.org/resource/image/33/2e/33f57c04bdc46e887d1ef5ca8ec7b42e.jpg"
+                    },
+                    "type": "c3"
+                },
+                {
+                    "title": "玩转webpack",
+                    "cover": "https://static001.geekbang.org/resource/image/6b/2a/6b0e0ee871bc0238b163e85f08ddc02a.jpg",
+                    "score": 1570693591000,
+                    "extra": {
+                        "view_article_count": 43,
+                        "author_name": "程柳锋",
+                        "column_title": "玩转webpack",
+                        "last_aid": 108834,
+                        "column_cover": "https://static001.geekbang.org/resource/image/6b/2a/6b0e0ee871bc0238b163e85f08ddc02a.jpg",
+                        "sub_time": 1570693591,
+                        "had_sub": true,
+                        "column_id": 190,
+                        "column_subtitle": "全方位掌握webpack核心技能和优化策略",
+                        "update_frequency": "84课时，约900分钟",
+                        "column_sku": 100028901,
+                        "column_type": 3,
+                        "is_include_audio": false,
+                        "article_count": 84,
+                        "score": 1570693591000,
+                        "author_intro": "腾讯高级工程师，IVWEB团队社区和工程化负责人",
+                        "author_header": "https://static001.geekbang.org/resource/image/6b/2a/6b0e0ee871bc0238b163e85f08ddc02a.jpg"
+                    },
+                    "type": "c3"
+                },
+                {
+                    "title": "玩转Git三剑客",
+                    "cover": "https://static001.geekbang.org/resource/image/b8/1c/b85e7f6e5c5a42f8dabf1fb1807c971c.jpg",
+                    "score": 1555316545002,
+                    "extra": {
+                        "view_article_count": 40,
+                        "author_name": "苏玲",
+                        "column_title": "玩转Git三剑客",
+                        "last_aid": 75913,
+                        "column_cover": "https://static001.geekbang.org/resource/image/b8/1c/b85e7f6e5c5a42f8dabf1fb1807c971c.jpg",
+                        "sub_time": 1555316545,
+                        "had_sub": true,
+                        "column_id": 145,
+                        "column_subtitle": "带你深入掌握Git、GitHub和GitLab",
+                        "update_frequency": "62课时，约600分钟",
+                        "column_sku": 100021601,
+                        "column_type": 3,
+                        "is_include_audio": false,
+                        "article_count": 62,
+                        "score": 1555316545002,
+                        "author_intro": "携程代码平台负责人",
+                        "author_header": "https://static001.geekbang.org/resource/image/b8/1c/b85e7f6e5c5a42f8dabf1fb1807c971c.jpg"
+                    },
+                    "type": "c3"
+                }
+            ],
+            "title": "视频课",
+            "page": {
+                "count": 3,
+                "more": false
+            },
+            "id": 2
+        },
+        {
+            "list": [],
+            "title": "微课",
+            "page": {
+                "count": 0,
+                "more": false
+            },
+            "id": 3
+        },
+        {
+            "list": [],
+            "title": "其他",
+            "page": {
+                "count": 0,
+                "more": false
+            },
+            "id": 99
+        }
+    ],
+    "code": 0
+}
