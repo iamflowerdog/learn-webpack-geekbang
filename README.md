@@ -53,8 +53,14 @@
 
 #### PostCSS 的 autoprefixer 插件
 
-* parse CSS
+* parse CSS 把一些css样式自动补气到其他浏览器
 * add vendor prefixer to CSS using value from Can I Use.
+
+#### HTML JS CSS 压缩
+
+* HTML html-webpack-plugin
+* JS 内置 uglifyjs-webpack-plugin
+* CSS 需要引用 optimize-css-assets-wepack-plugin 同时使用 cssnano 预处理器
 
 #### px2rem-loader flexible 
 
