@@ -62,6 +62,11 @@
 * JS 内置 uglifyjs-webpack-plugin
 * CSS 需要引用 optimize-css-assets-wepack-plugin 同时使用 cssnano 预处理器
 
+#### 基础库分离
+
+* 使用html-webpack-externals-plugin 将react、react-dom基础包通过cdn引入，不打入bundle中
+* SplitChunksPlugin 分离基础包 分离页面公共文件
+
 #### px2rem-loader flexible 
 
 * html 根结点的大小计算，可以使用html: {font-size: calc(100vw/固定分辨率)}
