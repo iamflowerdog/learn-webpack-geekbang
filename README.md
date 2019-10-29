@@ -162,3 +162,9 @@
 #### stat 统计错误信息，引入 friendly-errors-webpack-plugin 构建提示更友好
 
 * 2019年10月30日
+
+#### 区分生产环境和测试环境
+* 引入DefinedPlugin定义全局变量
+
+#### 给css js html分包
+* 在filename 里面加上一个空路径
