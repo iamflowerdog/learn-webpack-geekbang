@@ -122,7 +122,7 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            environment: JSON.stringify('prod')
+            environment: JSON.stringify('test')
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name]_[contenthash:8].css'

@@ -14,6 +14,7 @@ class Search extends React.Component {
         }
     }
     handleDynamicImport () {
+        console.log(environment);
         import('./text.js').then((Text) => {
             this.setState({
                 Text: Text.default

@@ -90,6 +90,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            environment: JSON.stringify('dev')
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(),
         new FriendlyErrorsWebpackPlugin()
