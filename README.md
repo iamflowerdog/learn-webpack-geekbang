@@ -161,3 +161,4 @@
 
 #### stat 统计错误信息，引入 friendly-errors-webpack-plugin 构建提示更友好
 
+* 2019年10月30日
