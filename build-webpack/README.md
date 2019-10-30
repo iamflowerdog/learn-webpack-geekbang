@@ -11,5 +11,5 @@
     * 持续集成
 
 ##### 构建包功能设计结构
-![图片]](https://github.com/iamflowerdog/learn_webpack_geekbang/blob/master/assert/WX20191030-141858.png)
+![图片](https://github.com/iamflowerdog/learn_webpack_geekbang/blob/master/assert/WX20191030-141858.png)
 
