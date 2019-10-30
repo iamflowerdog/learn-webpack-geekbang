@@ -133,6 +133,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new FriendlyErrorsWebpackPlugin(),
+        // 代码压缩，多个scope合并成一个，生产模式会自动创建
         new webpack.optimize.ModuleConcatenationPlugin(),
         function() {
             this.hooks.done.tap('done', (stats) => { if (stats.compilation.errors && 
