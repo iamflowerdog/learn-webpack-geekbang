@@ -2,12 +2,8 @@
 
 const glob = require('glob');
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const setMPA = () => {
@@ -54,7 +50,6 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: 'js/[name]_[chunkhash:8].js'
     },
-    mode: 'production',
     module: {
         rules: [
             {
@@ -121,19 +116,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            environment: JSON.stringify('prod')
-        }),
         new MiniCssExtractPlugin({
             filename: 'css/[name]_[contenthash:8].css'
         }),
-        new OptimizeCSSAssetsPlugin({
-            assetNameRegExp: /\.css$/g,
-            cssProcessor: require('cssnano')
-        }),
         new CleanWebpackPlugin(),
         new FriendlyErrorsWebpackPlugin(),
-        new webpack.optimize.ModuleConcatenationPlugin(),
         function() {
             this.hooks.done.tap('done', (stats) => { if (stats.compilation.errors && 
                 stats.compilation.errors.length && process.argv.indexOf('- -watch') == -1)
@@ -144,16 +131,5 @@ module.exports = {
         }
     ].concat(htmlWebpackPlugins),
     devtool: '',
-    // optimization: {
-    //     splitChunks: {
-    //         cacheGroups: {
-    //           commons: {
-    //               test: /(react|react-dom)/,
-    //               name: 'vendors',
-    //               chunks: 'all'
-    //           }
-    //         }
-    //       }
-    // },
     stats: 'errors-only'
 };
