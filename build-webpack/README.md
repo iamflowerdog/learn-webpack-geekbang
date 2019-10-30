@@ -11,5 +11,13 @@
     * 持续集成
 
 ##### 构建包功能设计结构
+* lib 目录下面放置源代码 下面所用到的依赖要放在安装到dependencies里面
+* test 放置测试代码 所用到的依赖要安装到devDependencies里面
 ![图片](https://github.com/iamflowerdog/learn_webpack_geekbang/blob/master/assert/WX20191030-141858.png)
+
+##### 使用ESLint规范构建脚本
+* 使用eslint-config-airbnb-base 插件
+* eslint --fix 可以自动处理空格
+* vscode 右下角spaces 可以处理当前文件的tab缩进
+* .eslintrc.js 里面通过 rules: {} 里面可以修改配置
 
