@@ -28,3 +28,4 @@
 * 构建是否成功 build目录是否有内容输出
 * 引入mocha进行初步测试是否有html和css、js文件生成，引入glob-all同步获取文件
 
+
