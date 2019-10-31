@@ -21,11 +21,13 @@
 * vscode 右下角spaces 可以处理当前文件的tab缩进
 * .eslintrc.js 里面通过 rules: {} 里面可以修改配置
 
-### 冒烟测试
+##### 冒烟测试
 * 用webpack函数来处理 webpack(prodConfig, (err, stats) => void);
 * process.chdir(), 然后webpack.base.js里面修改当前所在目录
 * 删除eslint
 * 构建是否成功 build目录是否有内容输出
 * 引入mocha进行初步测试是否有html和css、js文件生成，引入glob-all同步获取文件
 
-
+##### 单元测试
+* 引入mocha单元测试，引入assert断言库来判断
+* 引入istanbul测试覆盖率，通过nyc方法检查测试覆盖率
