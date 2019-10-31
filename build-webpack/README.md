@@ -21,3 +21,7 @@
 * vscode 右下角spaces 可以处理当前文件的tab缩进
 * .eslintrc.js 里面通过 rules: {} 里面可以修改配置
 
+### 冒烟测试
+* 用webpack函数来处理 webpack(prodConfig, (err, stats) => void);
+* process.chdir(), 然后webpack.base.js里面修改当前所在目录
+* 删除eslint
