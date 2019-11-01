@@ -189,3 +189,10 @@
 }
 
 ```
+
+#### 速度分析
+初级分析
+* 使用webpack内置的stats
+数独分析
+* 使用 speed-measure-webpack-plugin
+

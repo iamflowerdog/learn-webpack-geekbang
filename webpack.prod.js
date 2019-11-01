@@ -9,7 +9,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 
+const smp = new SpeedMeasurePlugin();
 const setMPA = () => {
     const entry = {};
     const htmlWebpackPlugins = [];
@@ -47,8 +49,7 @@ const setMPA = () => {
 }
 
 const { entry, htmlWebpackPlugins } = setMPA();
-
-module.exports = {
+const prodConfig = {
     entry: entry,
     output: {
         path: path.join(__dirname, 'dist'),
@@ -135,12 +136,13 @@ module.exports = {
         new FriendlyErrorsWebpackPlugin(),
         // 代码压缩，多个scope合并成一个，生产模式会自动创建
         new webpack.optimize.ModuleConcatenationPlugin(),
-        function() {
-            this.hooks.done.tap('done', (stats) => { if (stats.compilation.errors && 
-                stats.compilation.errors.length && process.argv.indexOf('- -watch') == -1)
-            {
-                console.log('build error');
-                process.exit(1); }
+        function () {
+            this.hooks.done.tap('done', (stats) => {
+                if (stats.compilation.errors &&
+                    stats.compilation.errors.length && process.argv.indexOf('- -watch') == -1) {
+                    console.log('build error');
+                    process.exit(1);
+                }
             })
         }
     ].concat(htmlWebpackPlugins),
@@ -157,4 +159,5 @@ module.exports = {
     //       }
     // },
     stats: 'errors-only'
-};
+}
+module.exports = smp.wrap(prodConfig);
