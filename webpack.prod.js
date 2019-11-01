@@ -10,6 +10,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 
 const smp = new SpeedMeasurePlugin();
 const setMPA = () => {
@@ -125,12 +127,27 @@ const prodConfig = {
         new webpack.DefinePlugin({
             environment: JSON.stringify('prod')
         }),
+        new BundleAnalyzerPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name]_[contenthash:8].css'
         }),
         new OptimizeCSSAssetsPlugin({
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano')
+        }),
+        new HtmlWebpackExternalsPlugin({
+            externals: [
+                {
+                    module: 'react',
+                    entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js',
+                    global: 'React',
+                },
+                {
+                    module: 'react-dom',
+                    entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
+                    global: 'ReactDOM',
+                },
+            ],
         }),
         new CleanWebpackPlugin(),
         new FriendlyErrorsWebpackPlugin(),
