@@ -193,6 +193,7 @@
 #### 速度分析
 初级分析
 * 使用webpack内置的stats
-数独分析
-* 使用 speed-measure-webpack-plugin
-
+速度分析
+* 使用 speed-measure-webpack-plugin 分析每个插件和loader耗时情况
+体积分析
+* 引入 bundle-analyzer-plugin 插件分析依赖的第三方模块文件大小，业务组建代码大小
