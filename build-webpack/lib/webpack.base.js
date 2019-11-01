@@ -13,7 +13,7 @@ const setMPA = () => {
   const htmlWebpackPlugins = [];
   const entryFiles = glob.sync(path.join(projectRoot, './src/*/index.js'));
   // Users/yang/Desktop/my-project/src/index/index.js
-
+  console.log(entryFiles);
   Object.keys(entryFiles)
     .map((index) => {
       const entryFile = entryFiles[index];
