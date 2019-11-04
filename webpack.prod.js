@@ -127,6 +127,7 @@ const prodConfig = {
         new webpack.DefinePlugin({
             environment: JSON.stringify('prod')
         }),
+        // 分析压缩后文件的体积
         new BundleAnalyzerPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name]_[contenthash:8].css'
