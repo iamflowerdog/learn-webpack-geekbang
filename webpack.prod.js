@@ -12,7 +12,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
-
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 const smp = new SpeedMeasurePlugin();
 const setMPA = () => {
@@ -137,20 +137,21 @@ const prodConfig = {
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano')
         }),
-        new HtmlWebpackExternalsPlugin({
-            externals: [
-                {
-                    module: 'react',
-                    entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js',
-                    global: 'React',
-                },
-                {
-                    module: 'react-dom',
-                    entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
-                    global: 'ReactDOM',
-                },
-            ],
-        }),
+        // new HtmlWebpackExternalsPlugin({
+        //     externals: [
+        //         {
+        //             module: 'react',
+        //             entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js',
+        //             global: 'React',
+        //         },
+        //         {
+        //             module: 'react-dom',
+        //             entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
+        //             global: 'ReactDOM',
+        //         },
+        //     ],
+        // }),
+        ...htmlWebpackPlugins,
         new CleanWebpackPlugin(),
         new FriendlyErrorsWebpackPlugin(),
         // 代码压缩，多个scope合并成一个，生产模式会自动创建
@@ -163,8 +164,14 @@ const prodConfig = {
                     process.exit(1);
                 }
             })
-        }
-    ].concat(htmlWebpackPlugins),
+        },
+        new webpack.DllReferencePlugin({
+            manifest: require('./build/library/library.json')
+        }),
+        new AddAssetHtmlPlugin({
+            filepath: path.resolve(__dirname, 'build/library/*.dll.js'),
+        }),
+    ],
     devtool: '',
     // optimization: {
     //     splitChunks: {
@@ -187,4 +194,5 @@ const prodConfig = {
     },
     stats: 'errors-only'
 }
-module.exports = smp.wrap(prodConfig);
+
+module.exports = prodConfig;

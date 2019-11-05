@@ -9,7 +9,8 @@
     "build:ssr": "webpack --config webpack.ssr.js",
     "build:stats": "webpack --config webpack.ssr.js --json > stats.json",
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server --config webpack.dev.js --open"
+    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "dll": "webpack --config webpack.dll.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "add-asset-html-webpack-plugin": "^3.1.3",
     "autoprefixer": "^9.6.5",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",

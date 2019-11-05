@@ -200,3 +200,10 @@
 
 #### 并行压缩/parallel
 * 使用terser-webpack-plugin 开启parallel参数
+
+#### 进一步分包：预编译资源模块
+* 在npm run build 构建之前，先把一些基础包和业务包打包成一个文件
+* 使用DllPlugin进行分包，dynamic-link-library 
+* DllPlugin把基础包打包成一个文件，然后全局暴露一个变量，需要在html引入进来
+* DllPlugin中的options[name] 要和output[name]对应起来，不然会报一个引用错误
+* 通过引入add-asset-html-webpack-plugin把已经打包的js，通过html引入，注意不要和SpeedMeasurePlugin同时使用，会出错
