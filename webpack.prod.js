@@ -11,6 +11,7 @@ const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const TerserPlugin = require('terser-webpack-plugin');
 
 
 const smp = new SpeedMeasurePlugin();
@@ -128,7 +129,7 @@ const prodConfig = {
             environment: JSON.stringify('prod')
         }),
         // 分析压缩后文件的体积
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name]_[contenthash:8].css'
         }),
@@ -176,6 +177,14 @@ const prodConfig = {
     //         }
     //       }
     // },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+            }),
+        ],
+    },
     stats: 'errors-only'
 }
 module.exports = smp.wrap(prodConfig);
