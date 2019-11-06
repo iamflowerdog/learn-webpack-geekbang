@@ -220,3 +220,6 @@
 * resolve.alias 告诉webpack一些包的别名，减少不必要的查找
 * resolve.mainFields webpack先从package.json.main找入口文件，如果没有找项目的index.js -- lib/index
 * resolve.extensions: [string] = ['.wasm', '.mjs', '.js', '.json']
+
+#### 引入 image-webpack-loader 压缩插件报错？
+

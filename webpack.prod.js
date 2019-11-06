@@ -15,7 +15,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const HappyPack = require('happypack');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 const PATHS = {
     src: path.join(__dirname, 'src')
@@ -124,7 +124,31 @@ const prodConfig = {
                         options: {
                             name: 'image/[name]_[hash:8].[ext]'
                         }
-                    }
+                    },
+                    // {
+                    //     loader: 'image-webpack-loader',
+                    //     options: {
+                    //         mozjpeg: {
+                    //             progressive: true,
+                    //             quality: 65
+                    //         },
+                    //         // optipng.enabled: false will disable optipng
+                    //         optipng: {
+                    //             enabled: false,
+                    //         },
+                    //         pngquant: {
+                    //             quality: '65-90',
+                    //             speed: 4
+                    //         },
+                    //         gifsicle: {
+                    //             interlaced: false,
+                    //         },
+                    //         // the webp option will enable WEBP
+                    //         webp: {
+                    //             quality: 75
+                    //         }
+                    //     }
+                    // }
                 ]
             },
             {
