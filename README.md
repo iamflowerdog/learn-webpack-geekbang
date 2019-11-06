@@ -207,3 +207,7 @@
 * DllPlugin把基础包打包成一个文件，然后全局暴露一个变量，需要在html引入进来
 * DllPlugin中的options[name] 要和output[name]对应起来，不然会报一个引用错误
 * 通过引入add-asset-html-webpack-plugin把已经打包的js，通过html引入，注意不要和SpeedMeasurePlugin同时使用，会出错
+
+#### 多进程/多实例构建 资源并行解析
+* 使用HappyPack webpack --> happyloader -> happyPlugin -> happyThreadPool -> happyWorker (耗时 4036ms)
+* thread-loader （耗时 4030ms）

@@ -13,6 +13,8 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const HappyPack = require('happypack');
+
 
 const smp = new SpeedMeasurePlugin();
 const setMPA = () => {
@@ -63,9 +65,17 @@ const prodConfig = {
         rules: [
             {
                 test: /.js$/,
+                // include: path.resolve("src"),
                 use: [
+                    // 'happypack/loader',
+                    {
+                        loader: 'thread-loader',
+                        options: {
+                            workers: 3
+                        }
+                    },
                     'babel-loader',
-                    'eslint-loader'
+                    // 'eslint-loader'
                 ]
             },
             {
@@ -172,6 +182,9 @@ const prodConfig = {
         new AddAssetHtmlPlugin({
             filepath: path.resolve(__dirname, 'build/library/*.dll.js'),
         }),
+        // new HappyPack({
+        //     loaders: ['babel-loader']
+        // })
     ],
     devtool: '',
     // optimization: {
