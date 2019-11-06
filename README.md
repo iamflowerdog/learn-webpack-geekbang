@@ -211,3 +211,6 @@
 #### 多进程/多实例构建 资源并行解析
 * 使用HappyPack webpack --> happyloader -> happyPlugin -> happyThreadPool -> happyWorker (耗时 4036ms)
 * thread-loader （耗时 4030ms）
+
+#### 利用缓存进行构建
+* babel-loader 缓存  terser-webpack-plugin 缓存 利用hard-source缓存

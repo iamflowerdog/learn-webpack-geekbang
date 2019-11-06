@@ -14,7 +14,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const HappyPack = require('happypack');
-
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 const smp = new SpeedMeasurePlugin();
 const setMPA = () => {
@@ -67,14 +67,14 @@ const prodConfig = {
                 test: /.js$/,
                 // include: path.resolve("src"),
                 use: [
-                    // 'happypack/loader',
-                    {
-                        loader: 'thread-loader',
-                        options: {
-                            workers: 3
-                        }
-                    },
-                    'babel-loader',
+                    'happypack/loader',
+                    // {
+                    //     loader: 'thread-loader',
+                    //     options: {
+                    //         workers: 3
+                    //     }
+                    // },
+                    // 'babel-loader',
                     // 'eslint-loader'
                 ]
             },
@@ -166,7 +166,7 @@ const prodConfig = {
         new CleanWebpackPlugin(),
         new FriendlyErrorsWebpackPlugin(),
         // 代码压缩，多个scope合并成一个，生产模式会自动创建
-        new webpack.optimize.ModuleConcatenationPlugin(),
+        // new webpack.optimize.ModuleConcatenationPlugin(),
         function () {
             this.hooks.done.tap('done', (stats) => {
                 if (stats.compilation.errors &&
@@ -182,9 +182,10 @@ const prodConfig = {
         new AddAssetHtmlPlugin({
             filepath: path.resolve(__dirname, 'build/library/*.dll.js'),
         }),
-        // new HappyPack({
-        //     loaders: ['babel-loader']
-        // })
+        new HappyPack({
+            loaders: ['babel-loader?cacheDirectory=true']
+        }),
+        new HardSourceWebpackPlugin()
     ],
     devtool: '',
     // optimization: {
@@ -199,10 +200,10 @@ const prodConfig = {
     //       }
     // },
     optimization: {
-        minimize: true,
         minimizer: [
             new TerserPlugin({
                 parallel: true,
+                cache: true
             }),
         ],
     },
