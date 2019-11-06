@@ -15,7 +15,11 @@ const TerserPlugin = require('terser-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const HappyPack = require('happypack');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 
+const PATHS = {
+    src: path.join(__dirname, 'src')
+}
 const smp = new SpeedMeasurePlugin();
 const setMPA = () => {
     const entry = {};
@@ -186,7 +190,10 @@ const prodConfig = {
         new HappyPack({
             loaders: ['babel-loader?cacheDirectory=true']
         }),
-        new HardSourceWebpackPlugin()
+        new HardSourceWebpackPlugin(),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+        })
     ],
     devtool: '',
     // optimization: {
