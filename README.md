@@ -214,3 +214,9 @@
 
 #### 利用缓存进行构建
 * babel-loader 缓存  terser-webpack-plugin 缓存 利用hard-source缓存
+
+#### 减少文件搜索范围
+* babel-loader  rules.[].exclude: 'node_modules' 不解析 node_modules 里面引入的第三方包
+* resolve.alias 告诉webpack一些包的别名，减少不必要的查找
+* resolve.mainFields webpack先从package.json.main找入口文件，如果没有找项目的index.js -- lib/index
+* resolve.extensions: [string] = ['.wasm', '.mjs', '.js', '.json']

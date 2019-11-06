@@ -65,7 +65,8 @@ const prodConfig = {
         rules: [
             {
                 test: /.js$/,
-                // include: path.resolve("src"),
+                // 只解析src里面的js文件 第三方引入的告诉babel-loader不解析，因为一般人家都自动解析好了
+                include: path.resolve('src'),
                 use: [
                     'happypack/loader',
                     // {
@@ -206,6 +207,15 @@ const prodConfig = {
                 cache: true
             }),
         ],
+    },
+    resolve: {
+        alias: {
+            'react': path.resolve(__dirname, './node_modules/react/umd/react.production.min.js'),
+            'react-dom': path.resolve(__dirname, './node_modules/react-dom/umd/react-dom.production.min.js')
+        },
+        modules: [path.resolve(__dirname, 'node_modules')],
+        extensions: ['.js'],
+        mainFields: ['main']
     },
     stats: 'errors-only'
 }
