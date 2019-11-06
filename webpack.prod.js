@@ -85,7 +85,8 @@ const prodConfig = {
                         options: {
                             plugins: () => [
                                 require('autoprefixer')({
-                                    browsers: ["last 2 version", ">1%", "IOS 7"]
+                                    // All tools will find target browsers automatically, when you add the following to package.json:
+                                    // browsers: ["last 2 version", ">1%", "IOS 7"]
                                 })
                             ]
                         }

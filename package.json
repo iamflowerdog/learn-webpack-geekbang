@@ -61,5 +61,10 @@
     "babel-polyfill": "^6.26.0",
     "larger-number-add": "^1.0.3",
     "lib-flexible": "^0.3.2"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
