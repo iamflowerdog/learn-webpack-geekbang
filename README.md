@@ -232,3 +232,9 @@
 * 公共资源分离
 * 图片压缩
 * 动态Polyfill
+
+#### 从 webpack 命令行说起
+* mac 下面输入一个命令，先从node_modules/.bin/里面找，再去usr/local/.bin 找命令
+* webpack --config webpack.prod.js 入口webpack.js 最终找到 webpack-cli(webpack-command)这个npm包，并且执行CLI
+* webpack-cli对配置文件和命令参数进行转换，生成选项参数 options 然后再实例化 webpack 对象 `compiler = webpack(options);`
+* webpack的本质 Webpack可以将其理解是一种基于事件流的编程范例，一系列的插件运行。
