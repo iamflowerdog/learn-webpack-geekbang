@@ -223,3 +223,12 @@
 
 #### 引入 image-webpack-loader 压缩插件报错？
 
+#### 构建体积优化：动态 Polyfill
+* polyfill-service 识别Use Agent，下发不同的Polyfill
+
+#### 体积优化策略
+* Scope Hoisting 
+* Tree-shaking
+* 公共资源分离
+* 图片压缩
+* 动态Polyfill
