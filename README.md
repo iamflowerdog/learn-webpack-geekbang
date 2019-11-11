@@ -244,5 +244,8 @@
 * 调用插件的 apply(compiler) 方法，传入compiler对象
 
 #### webapck 流程篇
-webpack的编译都按照下面的钩子调用顺序执行
-[]()
+* webpack的编译都按照下面的钩子调用顺序执行
+![image](https://github.com/iamflowerdog/learn-webpack-geekbang/blob/master/assert/webpack.png)
+* compilation 是 complier 类里面的一个钩子对象
+* thisCompilation，webpack内置的插件比如 html-webpack-plugin 内部有独立的构建流程 和正常的不太一样
+
