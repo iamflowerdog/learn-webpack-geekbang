@@ -238,3 +238,7 @@
 * webpack --config webpack.prod.js 入口webpack.js 最终找到 webpack-cli(webpack-command)这个npm包，并且执行CLI
 * webpack-cli对配置文件和命令参数进行转换，生成选项参数 options 然后再实例化 webpack 对象 `compiler = webpack(options);`
 * webpack的本质 Webpack可以将其理解是一种基于事件流的编程范例，一系列的插件运行。
+
+#### tapable 与 webpack
+* node_modules/webpack/lib/webpack.js webpack入口文件分析
+* 调用插件的 apply(compiler) 方法，传入compiler对象
