@@ -252,3 +252,9 @@
   - output.library --> LibraryTemplatePlugin
 * WebpackOptionsDefaulter 设置webpack.options 初始值
 * grep "entryOption" -rn ./node_modules/webpack Unix工具程序可做文件内字符串查找 recursive linenum
+
+#### Chunk 生成算法
+1. webpack 先将 entry 中对应的 module 都生成一个新的 chunk
+2. 遍历 module 的依赖列表，将依赖的 module 也加入到 chunk 中
+3. 如果一个依赖的 module 是动态引入的模块，那么将会根据这个 module 创建一个新的 chunk，继续遍历依赖
+4. 重复上面的过程，直至得到所有的 chunks
