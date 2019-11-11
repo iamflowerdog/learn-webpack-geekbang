@@ -246,6 +246,9 @@
 #### webapck 流程篇
 * webpack的编译都按照下面的钩子调用顺序执行
 ![image](https://github.com/iamflowerdog/learn-webpack-geekbang/blob/master/assert/webpack.png)
-* compilation 是 complier 类里面的一个钩子对象
+* compilation 是 complier 类里面的一个钩子对象 复制编译打包优化
 * thisCompilation，webpack内置的插件比如 html-webpack-plugin 内部有独立的构建流程 和正常的不太一样
-
+* WebpackOptionsApply 将所有的配置 options 参数转换成 webpack 内部插件 使用默认插件列表
+  - output.library --> LibraryTemplatePlugin
+* WebpackOptionsDefaulter 设置webpack.options 初始值
+* grep "entryOption" -rn ./node_modules/webpack Unix工具程序可做文件内字符串查找 recursive linenum
